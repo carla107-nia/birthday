@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>For You ❤️</title>
+
+<style>
+
+body{
+
+margin:0;
+font-family:Segoe UI;
+text-align:center;
+background:linear-gradient(180deg,#0b1220,#020617);
+color:white;
+
+}
+
+h1{
+
+margin-top:80px;
+color:#ff8fab;
+
+}
+
+.envelope{
+
+position:relative;
+width:280px;
+height:180px;
+margin:60px auto;
+cursor:pointer;
+
+}
+
+.base{
+
+width:280px;
+height:180px;
+
+background:linear-gradient(45deg,#1d4ed8,#3b82f6);
+
+border-radius:10px;
+
+position:absolute;
+
+box-shadow:0 0 30px rgba(59,130,246,.5);
+
+}
+
+.flap{
+
+position:absolute;
+
+border-left:140px solid transparent;
+border-right:140px solid transparent;
+border-top:100px solid #60a5fa;
+
+top:0;
+
+transform-origin:top;
+
+transition:1.4s;
+
+}
+
+.letter{
+
+position:absolute;
+
+width:240px;
+height:150px;
+
+background:white;
+
+left:20px;
+top:15px;
+
+border-radius:12px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+font-size:50px;
+
+color:#1d4ed8;
+
+transition:1.4s;
+
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+}
+
+.open .flap{
+
+transform:rotateX(180deg);
+
+}
+
+.open .letter{
+
+transform:translateY(-200px);
+
+}
+
+#konten{
+
+display:none;
+
+padding-bottom:80px;
+
+animation:fade 2s;
+
+}
+
+@keyframes fade{
+
+from{opacity:0;}
+to{opacity:1;}
+
+}
+
+.slider{
+
+width:320px;
+
+margin:40px auto;
+
+overflow:hidden;
+
+border-radius:20px;
+
+box-shadow:0 0 40px rgba(255,255,255,.15);
+
+}
+
+.slides{
+
+display:flex;
+
+width:900%;
+
+animation:slide 36s infinite;
+
+}
+
+.slides img{
+
+width:320px;
+
+height:320px;
+
+object-fit:cover;
+
+}
+
+@keyframes slide{
+
+0%{margin-left:0;}
+10%{margin-left:0;}
+20%{margin-left:-100%;}
+30%{margin-left:-200%;}
+40%{margin-left:-300%;}
+50%{margin-left:-400%;}
+60%{margin-left:-500%;}
+70%{margin-left:-600%;}
+80%{margin-left:-700%;}
+90%{margin-left:-800%;}
+100%{margin-left:0;}
+
+}
+
+.heart{
+
+position:fixed;
+
+top:-20px;
+
+font-size:20px;
+
+color:#ff4d6d;
+
+animation:fall linear infinite;
+
+}
+
+@keyframes fall{
+
+to{
+
+transform:translateY(110vh);
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Click the letter 💌</h1>
+
+<div class="envelope" onclick="buka()" id="amplop">
+
+<div class="base"></div>
+
+<div class="flap"></div>
+
+<div class="letter">
+❤️
+</div>
+
+</div>
+
+<div id="konten">
+
+<h2>Happy Birthday 🎂</h2>
+
+<p>
+
+
+Happy Birthday to the most special person in my life 🎂
+
+<br><br>
+
+Birthdays are the universe's way of saying you are worth celebrating ❤️
+
+<br><br>
+
+On this special day I just want you to know how important you are in my life ✨
+
+<br><br>
+
+Thank you for your smile, your kindness, and every moment with you.
+
+<br><br>
+
+You make my world brighter and my days happier.
+
+<br><br>
+
+Thank you for coming into my life and making everything feel more meaningful.
+
+<br><br>
+
+Your smile is honestly my favorite thing in this world.
+
+<br><br>
+
+I hope your birthday is as beautiful as your heart.
+
+<br><br>
+
+I love you more than words can ever explain.
+
+<br><br>
+
+I love you more than anything.
+Always and forever 💙
+
+
+</p>
+
+<div class="slider">
+
+<div class="slides">
+
+<img src="1.jpg">
+<img src="2.jpg">
+<img src="3.jpg">
+<img src="4.jpg">
+<img src="5.jpg">
+<img src="6.jpg">
+<img src="7.jpg">
+<img src="8.jpg">
+<img src="9.jpg">
+
+</div>
+
+</div>
+
+</div>
+
+<audio id="musik">
+
+<source src="music.mp3">
+
+</audio>
+
+<script>
+
+let musik=document.getElementById("musik");
+
+function buka(){
+
+document.getElementById("amplop")
+.classList.add("open");
+
+setTimeout(()=>{
+
+document.getElementById("konten")
+.style.display="block";
+
+musik.play();
+
+love();
+
+},1400);
+
+}
+
+function love(){
+
+setInterval(()=>{
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.animationDuration=
+(Math.random()*3+3)+"s";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+
+h.remove();
+
+},6000);
+
+},300);
+
+}
+
+</script>
+
+</body>
+
+</html>
