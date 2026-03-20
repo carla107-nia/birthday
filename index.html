@@ -303,7 +303,19 @@ function buka(){
 document.getElementById("amplop")
 .classList.add("open");
 
-setTimeout(()=>{
+setTimeout(()=>{<audio id="bgMusic" loop>
+    <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="playMusic()" class="musicBtn">
+💖 Play Music
+</button>
+
+<script>
+function playMusic(){
+    document.getElementById("bgMusic").play();
+}
+</script>
 
 document.getElementById("konten")
 .style.display="block";
